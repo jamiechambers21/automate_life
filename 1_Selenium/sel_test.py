@@ -1,12 +1,9 @@
-# Test
-
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
-import requests
 
 
 options = webdriver.ChromeOptions()
@@ -14,14 +11,13 @@ options.add_experimental_option("detach", True)
 
 driver = webdriver.Chrome(options=options)
 
-
 def use_search_bar():
     # Will go onto a website and search for somethimg using the search bar
     driver.get("https://jqueryui.com/")
     print(driver.title)
 
     search = driver.find_element(by=By.NAME, value="s")
-    search.clear() # Clear search bar 
+    search.clear() # Clear search bar
     search.send_keys("test")
     search.send_keys(Keys.RETURN)
 
@@ -36,7 +32,7 @@ def use_mouse():
     # Practice using the mouse and navagating through pages
     driver.get("https://jqueryui.com/")
     print(driver.title)
-    
+
     link = driver.find_element(by=By.LINK_TEXT, value="Add Class")
     link.click()
 
@@ -88,8 +84,6 @@ def action_chains():
                 upgrade_actions.click()
                 upgrade_actions.perform()
 
-
-        
 # use_search_bar()
 # use_mouse()
 # action_chains()
